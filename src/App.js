@@ -13,9 +13,9 @@ function App () {
   return (
     <BrowserRouter>
     <AuthProvider>
-      <Navbar />
+      <Navbar />      
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="//" element={<Home/>} />
         <Route path="/eventinfo" element={<EventInfo/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Login/>} />
