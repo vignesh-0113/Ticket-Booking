@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.home h1{
+    text-align: center;
+    padding: 10px;
+}
+.home{
+    background-color: aliceblue;
+}
+
+
+.contact{
+    background-color: rgb(21, 25, 46);
+    color: white;
+}
+.list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    font-size: 20px;
+    padding: 50px;
+}
+.list h4{
+    
+    font-size: 25px;
+    
+}
+.list ul{
+    list-style: none;
+    padding-top: 20px;
+}
+.list ul li{
+    padding-top: 10px;
+}
+.contact hr{
+    color: white;
+    width: 90%;
+    display: flex;
+    margin-left: 5%;
+}
+.social-media{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    gap: 30px;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+
+
+@media (max-width: 600px) {
+    h1 {
+      font-size: 24px; 
+    }
+  
+    .list h4 {
+      font-size: 16px; 
+    }
+  
+    .list li {
+      font-size: 12px; 
+    }
+  
+    .social-media p {
+      font-size: 20px; 
+    }
+  }

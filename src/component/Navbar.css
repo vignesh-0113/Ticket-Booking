@@ -1,0 +1,81 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 2rem;
+    color: white;
+}
+  
+nav h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+  
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+  
+nav ul li {
+    margin-left: 2rem;
+    
+}
+  
+nav ul li .link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+  
+nav ul li a:hover {
+    color: #ffdd57;
+}
+
+.dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+}
+.active{
+    color: red;
+}
+  
+.username {
+    cursor: pointer;
+    font-size: 20px;
+
+}
+button{
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+  
+
+
+@media (max-width: 500px) {
+    .events {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  
+    .event-card h3 {
+      font-size: 16px;
+    }
+  
+    .event-card p {
+      font-size: 12px; /* Smaller font size for mobile */
+    }
+  }

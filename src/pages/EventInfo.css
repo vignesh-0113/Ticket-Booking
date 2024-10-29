@@ -1,0 +1,89 @@
+.events h1{
+    text-align: center;
+    padding: 20px;
+}
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.filters select{
+    padding: 2px;
+    border: 2px solid black;
+}
+.filters input{
+    width: 30%;
+    padding: 5px;
+    border: 2px solid black;
+    margin: 0;    
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px; 
+    padding: 20px;
+    justify-content: center;
+    cursor: pointer;
+    
+  }
+  .card h3{
+    text-align: center;
+  }
+  .card p span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    background-color: #ddd;
+    padding: 10px ;
+  }
+
+  
+  .event-card {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: 250px; 
+    transition: transform 0.2s;
+  }
+  
+  .event-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .event-card p {
+    margin: 8px 0; 
+  }
+  
+
+
+  @media (max-width: 500px) {
+    .events {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  
+    .filters {
+      flex-direction: column; 
+    }
+  
+    select,
+    input[type="text"] {
+      font-size: 14px; 
+    }
+  
+    .event-card h3 {
+      font-size: 16px;
+    }
+  
+    .event-card p {
+      font-size: 12px;
+    }
+  }
