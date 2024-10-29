@@ -1,89 +1,78 @@
-.events h1{
-    text-align: center;
-    padding: 20px;
+.events {
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: center;
 }
-.filters{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
 }
-.filters select{
-    padding: 2px;
-    border: 2px solid black;
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.filters input{
-    width: 30%;
-    padding: 5px;
-    border: 2px solid black;
-    margin: 0;    
+
+.cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  cursor: pointer;
 }
 
 .card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px; 
-    padding: 20px;
-    justify-content: center;
-    cursor: pointer;
-    
-  }
-  .card h3{
-    text-align: center;
-  }
-  .card p span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: red;
-    background-color: #ddd;
-    padding: 10px ;
-  }
+  width: 300px;
+  flex-direction: row;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
 
-  
-  .event-card {
-    background-color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    width: 250px; 
-    transition: transform 0.2s;
-  }
-  
-  .event-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .event-card p {
-    margin: 8px 0; 
-  }
-  
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007BFF;
+}
+
+.card p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #555;
+}
+
+.card span {
+  font-weight: bold;
+  color: #333;
+}
 
 
-  @media (max-width: 500px) {
-    .events {
-      padding: 15px;
-    }
-  
-    h1 {
-      font-size: 22px;
-    }
-  
-    .filters {
-      flex-direction: column; 
-    }
-  
-    select,
-    input[type="text"] {
-      font-size: 14px; 
-    }
-  
-    .event-card h3 {
-      font-size: 16px;
-    }
-  
-    .event-card p {
-      font-size: 12px;
-    }
+
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(100% - 20px); 
+    margin: 10px 0; 
   }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .product {
+    flex-direction: column; 
+  }
+}

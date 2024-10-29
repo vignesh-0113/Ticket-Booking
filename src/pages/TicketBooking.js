@@ -1,64 +1,63 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './TicketBooking.css'; 
+import './TicketBooking.css';
 
 
-
-export const TicketBooking = () => {
+export function TicketBooking() {
   const location = useLocation();
-  const { eventName, ticketsAvailable, price } = location.state || {};
-  const [name, setName] = useState('');
-  const [numOfSeats, setNumOfSeats] = useState(1);
+  const { event } = location.state || {};
 
+  const [name, setName] = useState('');
+  const [numberOfTickets, setNumberOfTickets] = useState(1);
+  
+  if (!event) {
+    return <p>No event data found.</p>;
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success(`Successfully booked ${numOfSeats} seat(s) for ${eventName}!`, {
-      position: 'top-center',
-    });
-    setName('');
-    setNumOfSeats(1);
-    
+    alert(`Booking confirmed for ${name} - ${numberOfTickets} tickets for ${event.name}`);
   };
 
-  const totalPrice = numOfSeats * price;
+  const totalPrice = numberOfTickets * event.price;
 
   return (
-    <div className="ticket-booking-container">
-      <ToastContainer />
-      <h1>Book Tickets for {eventName}</h1>
+    <div className="ticket-booking">
+      <h1>Ticket Booking</h1>
+      <h2>{event.name}</h2>
+      <p><strong>Description:</strong> {event.description}</p>
+      <p><strong>Date & Time:</strong> {event.date} at {event.time}</p>
+      <p><strong>Location:</strong> {event.location}</p>
+      <p><strong>Price per Ticket:</strong> ${event.price}</p>
+      
       <form onSubmit={handleSubmit}>
-        <label>Name:</label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        
-        <label>Event Name:</label>
-        <input
-          type="text"
-          value={eventName}
-          readOnly
-        />
-        <div className='increase'>
-        
-        <label>No.of seats you need :</label>
-        <input
-          type="number"
-          value={numOfSeats}
-          onChange={(e) => setNumOfSeats(e.target.value)}
-          min="1"
-          max={ticketsAvailable}
-          required
-        />
-
-        </div>  
-        <button type="submit" className='book-button'>Book Tickets</button>
+        <div>
+          <label>
+            Your Name:
+            <input 
+              type="text" 
+              value={name} 
+              onChange={(e) => setName(e.target.value)} 
+              required 
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Number of Tickets:
+            <input 
+              type="number" 
+              value={numberOfTickets} 
+              onChange={(e) => setNumberOfTickets(e.target.value)} 
+              min="1" 
+              max={event.ticketsAvailable} 
+              required 
+            />
+          </label>
+        </div>
+        <h3>Total Price: ${totalPrice}</h3>
+        <button type="submit">Book Tickets</button>
       </form>
     </div>
   );
-};
+}

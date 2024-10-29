@@ -1,9 +1,9 @@
-nav {
+nav { 
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #333;
-    padding: 1rem 2rem;
+    padding: 10px 1rem;
     color: white;
 }
   
@@ -11,25 +11,29 @@ nav h1 {
     margin: 0;
     font-size: 1.5rem;
 }
-  
+
+.menu-icon {
+    display: none; 
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    margin-right: 20px;
+    margin: 0;
+    gap: 20px;
+    padding-right: 20px;
 }
-  
-nav ul li {
-    margin-left: 2rem;
-    
-}
-  
+
 nav ul li .link {
+    margin-top: 10px;
     color: white;
     text-decoration: none;
     font-size: 20px;
     transition: color 0.3s;
 }
-  
+
 nav ul li a:hover {
     color: #ffdd57;
 }
@@ -41,17 +45,13 @@ nav ul li a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000; 
 }
-.active{
-    color: red;
-}
-  
+
 .username {
     cursor: pointer;
     font-size: 20px;
-
 }
-button{
-    padding: 5px;
+
+button {
     border-radius: 10px;
     font-size: 20px;
     display: flex;
@@ -59,23 +59,36 @@ button{
     justify-content: center;
     cursor: pointer;
 }
-  
+
+.logout {
+    width: 100%;
+}  
 
 
-@media (max-width: 500px) {
-    .events {
-      padding: 15px;
+@media (max-width: 768px) {
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        align-items: center; 
+        width: 100%;
+        background-color: #777777;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        padding: 20px 0;
+        z-index: 999;
     }
-  
-    h1 {
-      font-size: 22px;
+
+    nav ul.active {
+        display: flex; 
     }
-  
-    .event-card h3 {
-      font-size: 16px;
+
+    .menu-icon {
+        display: block;
+         
     }
-  
-    .event-card p {
-      font-size: 12px; /* Smaller font size for mobile */
+
+    nav h1 {
+        flex-grow: 1; 
     }
-  }
+}

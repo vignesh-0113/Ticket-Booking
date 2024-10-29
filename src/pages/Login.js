@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
 import './Login.css';
-import axios from 'axios';
 import { useAuth } from '../auth/Authenticate';
 import { motion } from 'framer-motion';        
 import { Link, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import Data from './db.json';
 
 export const Login = () => {
     const { loginUpdate } = useAuth();
+    const navigate = useNavigate();
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
-
-    const register = () => {
-        toast.success('Redirecting to Register Page');
-        setTimeout(() => navigate('./register'), 2000);
-    }
 
     const onFormSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post("http://localhost:3001/users", { username, password });
-            loginUpdate(response.data);
-            toast.success('Login Successfully', { position: 'top-center' });
-        } catch (error) {
-            toast.error('Login Failed: ' + (error.response?.data?.msg || 'Please try again.'), { position: 'top-center' });
+        
+        const user = Data.users.find(user => user.username === username && user.password === password);
+        
+        if (user) {
+            loginUpdate(user);
+            toast.success('Login successful!');
+        } else {
+            toast.error('Invalid username or password!');
         }
+    };
+
+    const register = async () => {
+        navigate('/register');
     };
 
     return (

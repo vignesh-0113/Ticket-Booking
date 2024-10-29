@@ -1,72 +1,45 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import { motion } from 'framer-motion';
-import './Register.css';
-import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import Data from './db.json'; 
 
 export const Register = () => {
-    const navigate = useNavigate();
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const [cpassword, setCPassword] = useState('');
+    const navigate = useNavigate();
 
-    const onFormSubmit = async (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
-        if (password !== cpassword) {
-            toast.error('Passwords do not match', { position: 'top-center' });
-            return;
-        }
-        try {
-            await axios.post("http://localhost:3001/users/register", { username, password });
-            toast.success('Registration successful! Redirecting to login...', { position: 'top-center' });
-            setTimeout(() => navigate('/login'), 2000);
-        } catch (error) {
-            toast.error('Registration failed: ' + (error.response?.data?.msg || 'Please try again.'), { position: 'top-center' });
-        }
+
+        
+        const newUser = { username, password };
+        Data.users.push(newUser); 
+        
+        toast.success('Registration successful! You can now log in.');
+        navigate('/login');
     };
 
     return (
-        <div className="register-container">
+        <div>
             <ToastContainer />
-            <motion.h1
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1 }}
-            >
-                Register
-            </motion.h1>
-            <motion.div
-                className="reg"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.5, delay: 1 }}>
-                <form className="reg-form" onSubmit={onFormSubmit}>
-                    <label>Username:</label>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUserName(e.target.value)}
-                        required
-                    />
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required 
-                    />
-                    <label>Confirm Password:</label>
-                    <input
-                        type="password"
-                        value={cpassword}
-                        onChange={(e) => setCPassword(e.target.value)}
-                        required 
-                    />
-                    <button className="regbutton" type="submit">Register</button>
-                </form>
-            </motion.div>
+            <h1>Register</h1>
+            <form onSubmit={handleRegister}>
+                <label>Username:</label>
+                <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUserName(e.target.value)}
+                    required
+                />
+                <label>Password:</label>
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required 
+                />
+                <button type="submit">Register</button>
+            </form>
         </div>
     );
-}
+};
