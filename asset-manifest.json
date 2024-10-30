@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/vignesh-0113/Ticket-Booking/static/css/main.c37c616e.css",
+    "main.js": "/vignesh-0113/Ticket-Booking/static/js/main.21ec40ae.js",
+    "index.html": "/vignesh-0113/Ticket-Booking/index.html",
+    "main.c37c616e.css.map": "/vignesh-0113/Ticket-Booking/static/css/main.c37c616e.css.map",
+    "main.21ec40ae.js.map": "/vignesh-0113/Ticket-Booking/static/js/main.21ec40ae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c37c616e.css",
+    "static/js/main.21ec40ae.js"
+  ]
+}
