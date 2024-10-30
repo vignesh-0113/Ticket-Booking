@@ -13,9 +13,8 @@ function App () {
   
   return (
     <HashRouter>
-      <Navbar />
     <AuthProvider>
-            
+      <Navbar />      
       <Routes>
         <Route path="//" element={<Home/>} />
         <Route path="/home" element={<Home/>} />
