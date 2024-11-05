@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/vignesh-0113/Ticket-Booking/static/css/main.ef4b52fe.css",
-    "main.js": "/vignesh-0113/Ticket-Booking/static/js/main.6647b47f.js",
-    "index.html": "/vignesh-0113/Ticket-Booking/index.html",
-    "main.ef4b52fe.css.map": "/vignesh-0113/Ticket-Booking/static/css/main.ef4b52fe.css.map",
-    "main.6647b47f.js.map": "/vignesh-0113/Ticket-Booking/static/js/main.6647b47f.js.map"
+    "main.css": "/Ticket-Booking/static/css/main.ef4b52fe.css",
+    "main.js": "/Ticket-Booking/static/js/main.6647b47f.js",
+    "index.html": "/Ticket-Booking/index.html",
+    "main.ef4b52fe.css.map": "/Ticket-Booking/static/css/main.ef4b52fe.css.map",
+    "main.6647b47f.js.map": "/Ticket-Booking/static/js/main.6647b47f.js.map"
   },
   "entrypoints": [
     "static/css/main.ef4b52fe.css",
