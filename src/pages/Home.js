@@ -24,20 +24,18 @@ export function Home() {
 
           <Carousel>
             <div>
+              <img src="https://static.meraevents.com/content/images/banners/mera-events-header-011720162279ogmRk1724392984.jpg" alt='...'/>
+            </div>
+            <div>
               <img src="https://static.meraevents.com/content/images/banners/1170x370px-Serendipity-Launch-Post1726037450pMbbE1726833106.jpg" alt='...'/>
             </div>
             <div>
-              <img src="https://static.meraevents.com/content/images/banners/mera-events-header-011720162279ogmRk1724392984.jpg" alt='...'/>
-              
-            </div>
-            <div>
               <img src="https://static.meraevents.com/content/images/banners/Spectrum-20241723787361.jpeg" alt='...'/>
-              
             </div>
           </Carousel>
           </div>
 
-        <Carousel>
+        <Carousel className='ads'>
         <div>
         <img alt="hero_banner" src="https://cmsimages.shoppersstop.com/new10_sale_strip_web_a9f20f5168/new10_sale_strip_web_a9f20f5168.jpg" className="md:pl-[2px]" loading="eager" />        
         </div>
@@ -52,7 +50,7 @@ export function Home() {
       <div className='contact'>
         <div className='list'>
         <div className='list1'>
-          <h4>Product</h4>
+          <h4>Product Details</h4>
           <ul>
             <li>Features</li>
             <li>Sell Event Tickets</li>

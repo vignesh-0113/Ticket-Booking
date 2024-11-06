@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Data from './db.json'; 
 
 export const Register = () => {
@@ -21,7 +21,7 @@ export const Register = () => {
 
     return (
         <div>
-            <ToastContainer />
+            
             <h1>Register</h1>
             <form onSubmit={handleRegister}>
                 <label>Username:</label>

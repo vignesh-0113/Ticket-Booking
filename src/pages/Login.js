@@ -3,7 +3,7 @@ import './Login.css';
 import { useAuth } from '../auth/Authenticate';
 import { motion } from 'framer-motion';        
 import { Link, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Data from './db.json';
 
 export const Login = () => {
@@ -19,7 +19,7 @@ export const Login = () => {
         
         if (user) {
             loginUpdate(user);
-            toast.success('Login successful!');
+            navigate('/home')
         } else {
             toast.error('Invalid username or password!');
         }
@@ -31,7 +31,7 @@ export const Login = () => {
 
     return (
         <div className="login-container">
-            <ToastContainer />
+            
             <motion.h1
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
