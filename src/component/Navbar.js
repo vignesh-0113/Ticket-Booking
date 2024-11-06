@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useAuth } from '../auth/Authenticate';
 import './Navbar.css';
 import { FaUserAlt } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import burger menu icons
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export function Navbar() {
   const { user, logoutUpdate } = useAuth(); 
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // State for burger menu
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(prevState => !prevState);
@@ -31,8 +31,8 @@ export function Navbar() {
         {menuOpen ? <FaTimes /> : <FaBars />} 
       </div>
       <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-        <li><Link to="/" className="link">Home</Link></li>
-        <li><Link to="/eventinfo" className="link">Events Info</Link></li>
+        <li><NavLink to="/" className="link">Home</NavLink></li>
+        <li><NavLink to="/eventinfo" className="link">Events Info</NavLink></li>
         {user ? (
           <li>
             <button onClick={toggleDropdown} className="username">
@@ -45,7 +45,7 @@ export function Navbar() {
             )}
           </li>
         ) : (
-          <li><Link to="/login" className="link">Login</Link></li>
+          <li><NavLink to="/login" className="link">Login</NavLink></li>
         )}
       </ul>
     </nav>

@@ -6,7 +6,7 @@ import { EventInfo } from './pages/EventInfo';
 import { Login } from './pages/Login';
 import { AuthProvider } from './auth/Authenticate'; 
 import { TicketBooking } from './pages/TicketBooking';
-import { Register } from './pages/Register';
+
 
 function App () {
 
@@ -20,7 +20,6 @@ function App () {
         <Route path="/home" element={<Home/>} />
         <Route path="/eventinfo" element={<EventInfo/>} />
         <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
         <Route path="/ticket-booking" element={<TicketBooking />} />
       </Routes>
     </AuthProvider>

@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './TicketBooking.css';
+import { useNavigate } from 'react-router-dom';
 
 
 export function TicketBooking() {
   const location = useLocation();
   const { event } = location.state || {};
+  const navigate = useNavigate();
 
   const [name, setName] = useState('');
   const [numberOfTickets, setNumberOfTickets] = useState(1);
+
+  
   
   if (!event) {
     return <p>No event data found.</p>;
@@ -17,6 +21,7 @@ export function TicketBooking() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Booking confirmed for ${name} - ${numberOfTickets} tickets for ${event.name}`);
+    navigate('/eventinfo');
   };
 
   const totalPrice = numberOfTickets * event.price;
@@ -56,7 +61,7 @@ export function TicketBooking() {
           </label>
         </div>
         <h3>Total Price: ${totalPrice}</h3>
-        <button type="submit">Book Tickets</button>
+        <button type="submit" >Book Tickets</button>
       </form>
     </div>
   );

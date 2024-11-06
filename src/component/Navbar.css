@@ -34,9 +34,13 @@ nav ul li .link {
     font-size: 20px;
     transition: color 0.3s;
 }
+nav ul li .active {
+    color: gold;  
+    font-weight: bold;
+}
 
 nav ul li a:hover {
-    color: #ffdd57;
+    color: gold;
 }
 
 .dropdown {
