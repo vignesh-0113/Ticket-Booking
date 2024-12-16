@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Ticket-Booking/static/css/main.984c06c3.css",
+    "main.css": "/Ticket-Booking/static/css/main.994cd98c.css",
     "main.js": "/Ticket-Booking/static/js/main.e83bbd33.js",
     "index.html": "/Ticket-Booking/index.html",
-    "main.984c06c3.css.map": "/Ticket-Booking/static/css/main.984c06c3.css.map",
+    "main.994cd98c.css.map": "/Ticket-Booking/static/css/main.994cd98c.css.map",
     "main.e83bbd33.js.map": "/Ticket-Booking/static/js/main.e83bbd33.js.map"
   },
   "entrypoints": [
-    "static/css/main.984c06c3.css",
+    "static/css/main.994cd98c.css",
     "static/js/main.e83bbd33.js"
   ]
 }
