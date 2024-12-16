@@ -61,3 +61,11 @@
     background-color: #218838;
   }
   
+  @media (max-width: 768px){
+    .ticket-booking {
+      width: 85%;
+      margin: 20px;
+      padding: 10px;
+      
+    } 
+  }
